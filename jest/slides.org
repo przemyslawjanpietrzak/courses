@@ -1,5 +1,9 @@
 * Jest.io
-
+** Test runner
+** Made by facebook
+** Great for component tesing
+** JSDOM included
+** Alternatives: Mocha/Karma
 * Intro
 ** Easy = !Hard
 ** Simple = !Complex
@@ -139,8 +143,17 @@ expect(item.attribute).toEqual(44);
 #+END_SRC
 * Mocks
 #+BEGIN_SRC typescript
-import { mockedStore } from '@core/mocks';
+const functionMock = jest.fn();
 
-expect(selector(mockedStore)).toEqual(42);
+testedService.method(functionMock);
+
+expected(functionMock).toBeCalled();
 #+END_SRC
 * Spy
+#+BEGIN_SRC typescript
+const spy = jest.spyOn(service, 'methodName');
+
+testedService.method();
+
+expected(spy).toBeCalled();
+#+END_SRC

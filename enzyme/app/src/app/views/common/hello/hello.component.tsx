@@ -3,9 +3,9 @@ import styled from 'styled-components';
 
 const Text = styled.div`
   color: red;
-  &: hover {
+  &:hover {
     color: green;
-    }
+   }
 `
 
 export class Hello extends PureComponent<{ name: string }> {
@@ -14,9 +14,9 @@ export class Hello extends PureComponent<{ name: string }> {
     };
 
     render() {
-        return <div className='hello'>
-            <Text className='name'>{this.props.name}</Text>
-        </div>
+        return <Text className='hello'>
+            <div className='name'>{this.props.name}</div>
+        </Text>
     }
 
 }
